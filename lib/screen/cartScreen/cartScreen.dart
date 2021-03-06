@@ -18,7 +18,7 @@ class _CartScreenState extends State<CartScreen> {
             SliverAppBar(
               centerTitle: true,
               floating: false,
-              pinned: false,
+              pinned: true,
               title: Text("My Cart"),
             ),
             SliverList(

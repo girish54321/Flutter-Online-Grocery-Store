@@ -103,10 +103,8 @@ class LoginScreenUI extends StatelessWidget {
                                             isRequired: true,
                                             isEmail: true);
                                         if (emailRule.hasError) {
-                                          print("ERROR");
                                           changeVaildEmail(false);
                                         } else {
-                                          print("NO ERROR");
                                           changeVaildEmail(true);
                                         }
                                       },

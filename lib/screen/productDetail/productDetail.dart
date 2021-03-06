@@ -51,9 +51,10 @@ class _ProductDetiasState extends State<ProductDetail> {
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
+            title: Text("Product Name"),
             expandedHeight: size.height * 0.4,
             floating: false,
-            pinned: false,
+            pinned: true,
             leading: IconButton(
               icon: Icon(
                 EvaIcons.arrowIosBack,
@@ -82,7 +83,7 @@ class _ProductDetiasState extends State<ProductDetail> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "widget.product.name",
+                      "Product Name",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 26,

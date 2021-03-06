@@ -91,203 +91,194 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DismissKeyBoardView(
-        child: NotificationListener<ScrollNotification>(
-          // ignore: missing_return
-          onNotification: (scrollNotification) {
-            if (scrollNotification is ScrollStartNotification) {
-              _onStartScroll(scrollNotification.metrics);
-            }
-          },
-          child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: <Widget>[
-              SliverToBoxAdapter(
-                child: SafeArea(
-                  child: FadeInUp(
-                    duration: Duration(seconds: 1),
-                    child: HomeHeaderImage(),
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: SafeArea(
                 child: FadeInUp(
                   duration: Duration(seconds: 1),
-                  child: UserAddressView(
-                    address: displayAddress,
-                  ),
+                  child: HomeHeaderImage(),
                 ),
               ),
-              SliverToBoxAdapter(
-                  child: FadeInUp(
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
                 duration: Duration(seconds: 1),
-                child: Container(
-                  margin:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-                  child: SearchBox(
-                    radius: 8,
-                    function: null,
-                    height: 45.0,
-                  ),
-                ),
-              )),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: AppBanner(
-                    bigBanner: false,
-                  ),
+                child: UserAddressView(
+                  address: displayAddress,
                 ),
               ),
-              SliverToBoxAdapter(
+            ),
+            SliverToBoxAdapter(
                 child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: SeeAppTitle(
-                    title: "Exclusive Offer",
-                    function: () {},
-                  ),
+              duration: Duration(seconds: 1),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+                child: SearchBox(
+                  radius: 8,
+                  function: null,
+                  height: 45.0,
                 ),
               ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: Container(
-                    height: 234,
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return SlideInRight(
-                          duration: Duration(milliseconds: 500),
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              left: 14,
-                            ),
-                            child: ProductItem(
-                              name: "Name",
-                              imageUrl:
-                                  "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
-                              price: "55.0",
-                              function: () {
-                                Helper().goToPage(context, ProductDetail());
-                              },
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+            )),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: AppBanner(
+                  bigBanner: false,
                 ),
               ),
-              SliverToBoxAdapter(
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
                 child: SeeAppTitle(
-                  title: "Best Selling",
+                  title: "Exclusive Offer",
                   function: () {},
                 ),
               ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: Container(
-                    height: 234,
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return SlideInRight(
-                          duration: Duration(milliseconds: 500),
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              left: 14,
-                            ),
-                            child: ProductItem(
-                              name: "Name",
-                              imageUrl:
-                                  "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
-                              price: "55.0",
-                              function: () {},
-                            ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: Container(
+                  height: 234,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SlideInRight(
+                        duration: Duration(milliseconds: 500),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            left: 14,
                           ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: SeeAppTitle(
-                    title: "Groceries",
-                    function: () {},
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: Container(
-                    height: 80.00,
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return SlideInRight(
-                            duration: Duration(milliseconds: 500),
-                            child: GroceriesItem());
-                      },
-                    ),
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: SeeAppTitle(
-                    title: "For You",
-                    function: () {},
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: FadeInUp(
-                  duration: Duration(seconds: 1),
-                  child: Container(
-                    height: 234,
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return SlideInRight(
-                          duration: Duration(milliseconds: 500),
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              left: 14,
-                            ),
-                            child: ProductItem(
-                              name: "Name",
-                              imageUrl:
-                                  "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
-                              price: "55.0",
-                              function: () {},
-                            ),
+                          child: ProductItem(
+                            name: "Name",
+                            imageUrl:
+                                "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
+                            price: "55.0",
+                            function: () {
+                              Helper().goToPage(context, ProductDetail());
+                            },
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 16,
+            ),
+            SliverToBoxAdapter(
+              child: SeeAppTitle(
+                title: "Best Selling",
+                function: () {},
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: Container(
+                  height: 234,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SlideInRight(
+                        duration: Duration(milliseconds: 500),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            left: 14,
+                          ),
+                          child: ProductItem(
+                            name: "Name",
+                            imageUrl:
+                                "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
+                            price: "55.0",
+                            function: () {},
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: SeeAppTitle(
+                  title: "Groceries",
+                  function: () {},
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: Container(
+                  height: 80.00,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SlideInRight(
+                          duration: Duration(milliseconds: 500),
+                          child: GroceriesItem());
+                    },
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: SeeAppTitle(
+                  title: "For You",
+                  function: () {},
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: FadeInUp(
+                duration: Duration(seconds: 1),
+                child: Container(
+                  height: 234,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SlideInRight(
+                        duration: Duration(milliseconds: 500),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            left: 14,
+                          ),
+                          child: ProductItem(
+                            name: "Name",
+                            imageUrl:
+                                "https://study.com/cimages/multimages/16/adobestock_34617669.jpeg",
+                            price: "55.0",
+                            function: () {},
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 16,
+              ),
+            )
+          ],
         ),
       ),
     );

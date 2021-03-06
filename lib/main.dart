@@ -1,4 +1,5 @@
 import 'package:OnlineGroceryStore/helper/theme.dart';
+import 'package:OnlineGroceryStore/screen/home/homeMain.dart';
 import 'package:OnlineGroceryStore/screen/welcomeScreen/welcomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
               theme: light,
               title: 'Online Grocery Store',
               home: WelcomeScreen());
+          // home: HomeMain());
         },
       ),
     );
