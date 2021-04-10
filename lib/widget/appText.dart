@@ -47,12 +47,14 @@ class AppTextP1 extends StatelessWidget {
   final FontWeight fontWeight;
   final int numberOfLine;
   final TextAlign textAlign;
+  final Color color;
   const AppTextP1({
     Key key,
     @required this.text,
     this.fontWeight,
     this.numberOfLine,
     @required this.textAlign,
+    this.color,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -62,10 +64,10 @@ class AppTextP1 extends StatelessWidget {
       maxLines: numberOfLine != null ? numberOfLine : 2,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontSize: 19,
-        height: 1.3,
-        fontWeight: fontWeight != null ? fontWeight : FontWeight.normal,
-      ),
+          fontSize: 19,
+          height: 1.3,
+          fontWeight: fontWeight != null ? fontWeight : FontWeight.normal,
+          color: color != null ? color : null),
     );
   }
 }

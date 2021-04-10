@@ -54,6 +54,7 @@ dependencies:
   backdrop: ^0.4.7
   backdrop_modal_route: ^1.1.0
   carousel_slider: ^2.3.2
+  lottie: 
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,7 @@ flutter:
     - assets/image/map_pin.png
     - assets/image/splash_logo.png
     - assets/image/welcome.png
+    - assets/lottie/check.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

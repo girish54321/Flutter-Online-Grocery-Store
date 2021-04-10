@@ -22,7 +22,7 @@ class ProductByCategoryUI extends StatelessWidget {
     final double itemWidth = size.width / 2;
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
+        // elevation: 0,
         centerTitle: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: search

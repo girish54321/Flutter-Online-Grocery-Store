@@ -1,3 +1,5 @@
+import 'package:OnlineGroceryStore/screen/profileScreen/profileScreen.dart';
+import 'package:OnlineGroceryStore/screen/profileScreen/profileScreenUi.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +53,7 @@ class _HomeMainState extends State<HomeMain> {
           FindProductScreen(),
           CartScreen(),
           MyPage(),
-          MyPage(),
+          ProfileScreenUi(),
         ],
         controller: pageController,
         onPageChanged: onPageChanged,

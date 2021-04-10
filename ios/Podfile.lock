@@ -8,7 +8,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - geocoding (1.0.5):
     - Flutter
-  - geolocator (6.1.9):
+  - geolocator (6.2.0):
     - Flutter
   - libphonenumber (0.0.1):
     - Flutter
@@ -68,11 +68,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/vibration/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   geocoding: 32cfcdb16d38d907caaba65e2e42ad10d38bee58
-  geolocator: 057a0c63a43e9c5296d8ad845a3ac8e6df23d899
+  geolocator: f5e3de65e241caba7ce3e8a618803387bda73384
   libphonenumber: bd14d5abfc5939ab0b0767234e2d8e2593af258e
   libPhoneNumber-iOS: 0a32a9525cf8744fe02c5206eb30d571e38f7d75
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c

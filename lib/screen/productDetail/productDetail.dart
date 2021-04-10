@@ -1,3 +1,4 @@
+import 'package:OnlineGroceryStore/screen/orderSuccess/orderSuccessScreen.dart';
 import 'package:OnlineGroceryStore/screen/productDetail/widget/productImage.dart';
 import 'package:OnlineGroceryStore/screen/productDetail/widget/productSelaction.dart';
 import 'package:OnlineGroceryStore/widget/seeAllTitle.dart';
@@ -8,6 +9,8 @@ import 'package:OnlineGroceryStore/widget/buttons.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:OnlineGroceryStore/screen/productDetail/productViewImages.dart';
+
+import '../../helper/helper.dart';
 
 class ProductDetail extends StatefulWidget {
   // final Product product;
@@ -194,8 +197,13 @@ class _ProductDetiasState extends State<ProductDetail> {
           child: AppButton(
               color: Theme.of(context).accentColor,
               function: () {
-                // Helper()
-                //     .goToPage(context, GetStartedScreen());
+                Navigator.push(
+                    context,
+                    PageTransition(
+                      duration: Duration(milliseconds: 200),
+                      type: PageTransitionType.bottomToTop,
+                      child: OrderSuccessScreen(),
+                    ));
               },
               child: Center(
                 child: Text(
